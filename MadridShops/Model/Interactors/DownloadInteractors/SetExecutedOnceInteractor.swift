@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SetExecutedOnceInteractor {
-    func execute()
+    func execute(key: String)
 }

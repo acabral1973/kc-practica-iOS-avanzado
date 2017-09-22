@@ -1,5 +1,5 @@
 //
-//  ViewController+CollectionViewController.swift
+//  ShopsViewController+CollectionViewController.swift
 //  MadridShops
 //
 //  Created by Diego Freniche Brito on 07/09/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+extension ShopsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return fetchedResultsController.sections?.count ?? 0
     }

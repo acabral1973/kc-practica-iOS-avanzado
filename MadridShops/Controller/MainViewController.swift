@@ -92,7 +92,7 @@ class MainViewController: UIViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowShopsSegue" {
-            let vc = segue.destination as! ViewController
+            let vc = segue.destination as! ShopsViewController
             vc.context = self.context
         }
     }

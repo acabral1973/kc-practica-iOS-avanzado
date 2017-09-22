@@ -11,7 +11,7 @@ import CoreData
 import CoreLocation
 import MapKit
 
-class ViewController: UIViewController, CLLocationManagerDelegate {
+class ShopsViewController: UIViewController, CLLocationManagerDelegate {
 
     var context: NSManagedObjectContext!
     @IBOutlet weak var shopsCollectionView: UICollectionView!
@@ -20,13 +20,15 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {
+        
         super.viewDidLoad()
 
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
-        ExecuteOnceInteractorImpl().execute {
+        // La descarga de tiendas solo se efectúa si no había sido ejecutada correctamente antes
+        ExecuteOnceInteractorImpl().execute(key: "Shops") {
             initializeData()
         }
         
@@ -38,22 +40,21 @@ class ViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     func initializeData() {
-        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         
+        // Descargo la info de todas las tiendas
+        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         downloadShopsInteractor.execute { (shops: Shops) in
-            // todo OK
-            print("Name: " + shops.get(index: 0).name)
-            
+            print("👍 Total tiendas descargadas: \(shops.count())")
             let cacheInteractor = SaveAllShopsInteractorImpl()
             cacheInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
-                SetExecutedOnceInteractorImpl().execute()
+                SetExecutedOnceInteractorImpl().execute(key : "Shops")
                 
                 self._fetchedResultsController = nil
                 self.shopsCollectionView.delegate = self
                 self.shopsCollectionView.dataSource = self
                 self.shopsCollectionView.reloadData()
             })
-        }
+        } 
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
