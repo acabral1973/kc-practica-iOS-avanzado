@@ -1,4 +1,4 @@
-<p align="center"><img width=75% src="https://github.com/acabral1973/westeros/blob/master/madrid-shops.png"></p>
+<p align="center"><img width=75% src="https://github.com/acabral1973/westeros/blob/master/kc-practica-iOS-avanzado/MadridShops/Assets.xcassets/madrid-shops-logo.imageset/madrid-shops-logo.png"></p>
 
 ## Entrega práctica iOS Avanzado (Autor: Alejandro Cabral)
 Para esta entrega, 
