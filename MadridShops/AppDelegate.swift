@@ -25,15 +25,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Obtengo cada ViewController del TabBar que se que son Navigations
         let shopNavigation = tabBar.viewControllers![0] as! UINavigationController
-        // let activityNavigation = tabBar.viewControllers![1] as! UINavigationController
+        let activityNavigation = tabBar.viewControllers![1] as! UINavigationController
         
         // Obtengo el topViewController de cada Navigation
         let mainShopVC = shopNavigation.topViewController as! ShopsViewController
-        //let mainActivityVC = activityNavigation.topViewController as! ActivitiesViewController
+        let mainActivityVC = activityNavigation.topViewController as! ActivitiesViewController
 
         // Le paso el contexto a los viewController de Shops y Activities
         mainShopVC.context = self.context
-        //mainActivityVC.context = self.context
+        mainActivityVC.context = self.context
         
         return true
     }

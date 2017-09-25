@@ -46,7 +46,7 @@ class DownloadAllShopsInteractorNSURLSessionImpl: DownloadAllShopsInteractor {
 class DownloadAllActivitiesInteractorNSURLSessionImpl: DownloadAllActivitiesInteractor {
     
     func execute(onSuccess: @escaping (Activities) -> Void, onError: errorClosure) {
-        let urlString = "https://http://madrid-shops.com/json_new/getActivities.php"
+        let urlString = "https://madrid-shops.com/json_new/getActivities.php"
         
         let session = URLSession.shared
         if let url = URL(string: urlString) {

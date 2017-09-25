@@ -13,10 +13,10 @@ import MapKit
 
 class ShopsViewController: UIViewController, CLLocationManagerDelegate {
 
-    var context: NSManagedObjectContext!
     @IBOutlet weak var shopsCollectionView: UICollectionView!
-    
     @IBOutlet weak var map: MKMapView!
+    
+    var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
 
     override func viewDidLoad() {

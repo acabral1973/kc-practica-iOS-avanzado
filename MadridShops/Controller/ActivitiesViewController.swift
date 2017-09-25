@@ -30,7 +30,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         
         // La descarga de actividades solo se efectúa si no había sido ejecutada correctamente antes
         ExecuteOnceInteractorImpl().execute(key: "Activities") {
-            initializeData()
+            initializeActivities()
         }
         
         self.activitiesCollectionView.delegate = self
@@ -40,7 +40,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         self.map.setCenter(madridLocation.coordinate, animated: true)
     }
     
-    func initializeData() {
+    func initializeActivities() {
         
         // Descargo la info de todas las Actividades
         let downloadActivitiesInteractor: DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
@@ -60,29 +60,21 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let shop: ShopCD = self.fetchedResultsController.object(at: indexPath)
-        self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
+    //    let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
+    //    self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
         
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "ShowShopDetailSegue" {
-            let vc = segue.destination as! ShopDetailViewController
-            
-            let shopCD: ShopCD = sender as! ShopCD
-            vc.shop = mapShopCDIntoShop(shopCD: shopCD)
-        }
-    }
     
     // MARK: - Fetched results controller
-    var _fetchedResultsController: NSFetchedResultsController<ShopCD>? = nil
+    var _fetchedResultsController: NSFetchedResultsController<ActivityCD>? = nil
     
-    var fetchedResultsController: NSFetchedResultsController<ShopCD> {
+    var fetchedResultsController: NSFetchedResultsController<ActivityCD> {
         if (_fetchedResultsController != nil) {
             return _fetchedResultsController!
         }
         
-        let fetchRequest: NSFetchRequest<ShopCD> = ShopCD.fetchRequest()
+        let fetchRequest: NSFetchRequest<ActivityCD> = ActivityCD.fetchRequest()
         
         // Set the batch size to a suitable number.
         fetchRequest.fetchBatchSize = 20
@@ -91,7 +83,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
         // fetchRequest == SELECT * FROM EVENT ORDER BY TIMESTAMP DESC
-        _fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: "ShopsCacheFile")
+        _fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.context!, sectionNameKeyPath: nil, cacheName: "ActivitiesCacheFile")
         // aFetchedResultsController.delegate = self
         
         do {

@@ -234,11 +234,11 @@
 		99F8DA1C1F61D19D0020609D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				99FA0E111F6B270D00ABFA05 /* MadridShops.xcdatamodeld */,
 				99F8DA381F61E0740020609D /* Interactors */,
 				997157381F70534A000583C5 /* Mappers */,
 				99F8DA1D1F61D2D30020609D /* Shop.swift */,
 				99F8DA1F1F61D4D50020609D /* Shops.swift */,
-				99FA0E111F6B270D00ABFA05 /* MadridShops.xcdatamodeld */,
 				BA876F961F7444EE0067DC1B /* Activity.swift */,
 				BA876F9A1F7447460067DC1B /* ActivityExtension.swift */,
 				BA876F981F74452C0067DC1B /* Activities.swift */,

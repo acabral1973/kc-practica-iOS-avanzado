@@ -20,7 +20,9 @@ func parseShops(data: Data) -> Shops {
             shop.logo = shopJson["logo_img"] as! String
             shop.image = shopJson["img"] as! String
             shop.description = shopJson["description_en"] as! String
-            
+            shop.latitude = (shopJson["gps_lat"] as! NSString).floatValue
+            shop.longitude = (shopJson["gps_lon"] as! NSString).floatValue
+
             shops.add(shop: shop)
         }
     } catch {
@@ -41,6 +43,8 @@ func parseActivities(data: Data) -> Activities {
             activity.logo = activityJson["logo_img"] as! String
             activity.image = activityJson["img"] as! String
             activity.description = activityJson["description_en"] as! String
+            activity.latitude = (activityJson["gps_lat"] as! NSString).floatValue
+            activity.longitude = (activityJson["gps_lon"] as! NSString).floatValue
             
             activities.add(activity: activity)
         }

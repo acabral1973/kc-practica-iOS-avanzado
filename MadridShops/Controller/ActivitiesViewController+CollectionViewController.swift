@@ -19,12 +19,10 @@ extension ActivitiesViewController: UICollectionViewDelegate, UICollectionViewDa
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell: ShopCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ShopCell", for: indexPath) as! ShopCell
         
-        let shopCD: ShopCD = fetchedResultsController.object(at: indexPath)
-        
-        cell.refresh(shop: mapShopCDIntoShop(shopCD: shopCD))
-        
+        let cell: ActivityCell = collectionView.dequeueReusableCell(withReuseIdentifier: "ActivityCell", for: indexPath) as! ActivityCell
+        let activityCD: ActivityCD = fetchedResultsController.object(at: indexPath)
+        cell.refresh(activity: mapActivityCDIntoActivity(activityCD: activityCD))
         return cell
     }
     

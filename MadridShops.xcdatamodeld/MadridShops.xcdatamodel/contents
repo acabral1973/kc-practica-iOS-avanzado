@@ -7,7 +7,7 @@
         <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="logo" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="openingHours" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="ShopCD" representedClassName="ShopCD" syncable="YES" codeGenerationType="class">
@@ -21,7 +21,7 @@
         <attribute name="openingHours" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="ShopCD" positionX="-63" positionY="-18" width="128" height="165"/>
         <element name="ActivityCD" positionX="-63" positionY="45" width="128" height="165"/>
+        <element name="ShopCD" positionX="-63" positionY="-18" width="128" height="165"/>
     </elements>
 </model>
