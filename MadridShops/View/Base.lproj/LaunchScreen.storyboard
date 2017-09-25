@@ -19,10 +19,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="madrid-shops-logo" translatesAutoresizingMaskIntoConstraints="NO" id="vwU-Eq-Jz6">
-                                <rect key="frame" x="107" y="263.5" width="160" height="160"/>
+                                <rect key="frame" x="87" y="243.5" width="200" height="200"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="160" id="4E4-33-vdw"/>
-                                    <constraint firstAttribute="width" constant="160" id="TQd-pK-GJb"/>
+                                    <constraint firstAttribute="height" constant="200" id="4E4-33-vdw"/>
+                                    <constraint firstAttribute="width" constant="200" id="TQd-pK-GJb"/>
                                 </constraints>
                             </imageView>
                         </subviews>

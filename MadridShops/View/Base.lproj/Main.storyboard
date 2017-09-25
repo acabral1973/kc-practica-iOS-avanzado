@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="euV-Jq-JaT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13189.4" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5Cx-l4-mkC">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,55 +10,29 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
+        <!--Shops-->
         <scene sceneID="wcl-jV-gbV">
             <objects>
                 <navigationController id="euV-Jq-JaT" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Shops" image="shop-icon" selectedImage="shop-icon" id="vxU-RL-Kjt"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="0dU-LB-h4S">
                         <rect key="frame" x="0.0" y="20" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.8862745098" green="0.031372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="cJb-dm-XgN" kind="relationship" relationship="rootViewController" id="Dez-L1-72w"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="DHq-xb-3IO"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42h-8u-O8t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1865" y="166"/>
+            <point key="canvasLocation" x="-1006" y="165"/>
         </scene>
-        <!--¡MAD!-->
-        <scene sceneID="NJM-aD-4gl">
-            <objects>
-                <viewController id="cJb-dm-XgN" customClass="MainViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sFd-4E-L0r">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gvR-g6-R5v">
-                                <rect key="frame" x="88" y="475" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" red="0.84803158044815063" green="0.2025621235370636" blue="0.20959287881851196" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <viewLayoutGuide key="safeArea" id="bkM-HS-0dC"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="¡MAD!" id="kEH-VY-MHR">
-                        <barButtonItem key="rightBarButtonItem" systemItem="play" id="QOk-G0-OEA">
-                            <connections>
-                                <segue destination="BYZ-38-t0r" kind="show" identifier="ShowShopsSegue" id="8Qn-tw-eJE"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
-                    <connections>
-                        <outlet property="redRectangle" destination="gvR-g6-R5v" id="nGa-0t-c0M"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rKD-oO-KZJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1060" y="166"/>
-        </scene>
-        <!--Shops-->
+        <!--BUY MAD!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ShopsViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
@@ -67,7 +41,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Zb2-mG-Fdh">
-                                <rect key="frame" x="0.0" y="400" width="414" height="336"/>
+                                <rect key="frame" x="0.0" y="375.66666666666674" width="414" height="311.33333333333326"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="XTF-TS-reE">
                                     <size key="itemSize" width="310" height="55"/>
@@ -83,18 +57,18 @@
                                             <rect key="frame" x="0.0" y="0.0" width="310" height="55"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-vK-JiG">
-                                                    <rect key="frame" x="78" y="17" width="162" height="21"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="CgW-v8-ZQy">
                                                     <rect key="frame" x="0.0" y="0.0" width="77" height="55"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nia-vK-JiG">
+                                                    <rect key="frame" x="86" y="17" width="204" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </view>
                                         <connections>
@@ -105,7 +79,7 @@
                                 </cells>
                             </collectionView>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" rotateEnabled="NO" showsUserLocation="YES" showsCompass="NO" showsPointsOfInterest="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wb1-KV-WtE">
-                                <rect key="frame" x="0.0" y="64" width="414" height="336"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="311.66666666666669"/>
                             </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -121,7 +95,8 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Shops" largeTitleDisplayMode="always" id="kFm-6E-Ysl"/>
+                    <tabBarItem key="tabBarItem" title="Shops" image="shop-icon" selectedImage="shop-icon" id="Ya9-97-v5h" userLabel="Shops Item"/>
+                    <navigationItem key="navigationItem" title="BUY MAD!" largeTitleDisplayMode="always" id="kFm-6E-Ysl"/>
                     <connections>
                         <outlet property="map" destination="wb1-KV-WtE" id="gIs-gZ-EeN"/>
                         <outlet property="shopsCollectionView" destination="Zb2-mG-Fdh" id="LMY-Uy-YHN"/>
@@ -130,7 +105,120 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-151.19999999999999" y="165.06746626686657"/>
+            <point key="canvasLocation" x="-152.17391304347828" y="164.67391304347828"/>
+        </scene>
+        <!--Activities-->
+        <scene sceneID="GpT-9p-r76">
+            <objects>
+                <navigationController title="Activities" id="ABM-3S-Hct" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Activities" image="activity-icon" selectedImage="activity-icon" id="QqZ-uQ-Gvh"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="osw-at-FNE">
+                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.8862745098" green="0.031372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <color key="textShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ieu-gz-9gw" kind="relationship" relationship="rootViewController" id="ETb-dl-uiE"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pzy-rB-5uR" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1007" y="838"/>
+        </scene>
+        <!--KNOW MAD!-->
+        <scene sceneID="pIY-Xt-msO">
+            <objects>
+                <viewController id="ieu-gz-9gw" customClass="ActivitiesViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WXF-NC-vqg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="oNl-Kh-EbL">
+                                <rect key="frame" x="0.0" y="379.66666666666674" width="414" height="307.33333333333326"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="5s3-KH-467">
+                                    <size key="itemSize" width="381" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ActivityCell" id="geH-UX-S5r" customClass="ActivityCell" customModule="MadridShops" customModuleProvider="target">
+                                        <rect key="frame" x="16.666666666666668" y="0.0" width="381" height="50"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="381" height="50"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AtQ-fg-3ll">
+                                                    <rect key="frame" x="0.0" y="0.0" width="73" height="50"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Iv-8t-1mk">
+                                                    <rect key="frame" x="83" y="14" width="278" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </view>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-AO-yUV">
+                                <rect key="frame" x="0.0" y="64" width="414" height="307.66666666666669"/>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="oNl-Kh-EbL" firstAttribute="centerX" secondItem="MiQ-v2-9Xx" secondAttribute="centerX" id="BFR-xb-R53"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="centerX" secondItem="oNl-Kh-EbL" secondAttribute="centerX" id="D3g-dx-DEb"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="width" secondItem="WXF-NC-vqg" secondAttribute="width" id="QIv-Ob-wL2"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="centerX" secondItem="MiQ-v2-9Xx" secondAttribute="centerX" id="VAl-j9-kz2"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="centerX" secondItem="WXF-NC-vqg" secondAttribute="centerX" id="YwH-RC-nsN"/>
+                            <constraint firstItem="oNl-Kh-EbL" firstAttribute="centerX" secondItem="WXF-NC-vqg" secondAttribute="centerX" id="nnx-7n-WIY"/>
+                            <constraint firstItem="oNl-Kh-EbL" firstAttribute="top" secondItem="sRK-AO-yUV" secondAttribute="bottom" constant="8" id="pml-uK-bWo"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="top" secondItem="MiQ-v2-9Xx" secondAttribute="top" id="wHn-JH-J2N"/>
+                            <constraint firstItem="MiQ-v2-9Xx" firstAttribute="bottom" secondItem="oNl-Kh-EbL" secondAttribute="bottom" id="wNI-uu-0OU"/>
+                            <constraint firstItem="oNl-Kh-EbL" firstAttribute="width" secondItem="WXF-NC-vqg" secondAttribute="width" id="xBg-Ks-LlT"/>
+                            <constraint firstItem="sRK-AO-yUV" firstAttribute="height" secondItem="oNl-Kh-EbL" secondAttribute="height" id="zQV-tb-BCX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="MiQ-v2-9Xx"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="KNOW MAD!" id="ofE-lo-qU0"/>
+                    <connections>
+                        <outlet property="activitiesCollectionView" destination="oNl-Kh-EbL" id="LBa-uF-CzX"/>
+                        <outlet property="map" destination="sRK-AO-yUV" id="UNd-HS-fCg"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mj4-x3-Epc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-152.17391304347828" y="836.41304347826099"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="It7-pr-sEM">
+            <objects>
+                <tabBarController id="5Cx-l4-mkC" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Led-ak-rzE">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.8862745098" green="0.031372549020000001" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="euV-Jq-JaT" kind="relationship" relationship="viewControllers" id="Yk1-lf-kYb"/>
+                        <segue destination="ABM-3S-Hct" kind="relationship" relationship="viewControllers" id="P8i-ud-jZD"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6F8-wQ-8xp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1825" y="165"/>
         </scene>
         <!--Shop Detail View Controller-->
         <scene sceneID="jxp-RK-GAN">
@@ -168,4 +256,8 @@ Quietooor hasta luego Lucas apetecan benemeritaar se calle ustée hasta luego Lu
             <point key="canvasLocation" x="688.79999999999995" y="165.06746626686657"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="activity-icon" width="30" height="30"/>
+        <image name="shop-icon" width="30" height="30"/>
+    </resources>
 </document>
