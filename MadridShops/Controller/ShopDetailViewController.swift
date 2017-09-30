@@ -13,7 +13,6 @@ class ShopDetailViewController: UIViewController {
     var shop: Shop!
     
     @IBOutlet weak var shopDetailDescription: UITextView!
-    
     @IBOutlet weak var shopImage: UIImageView!
     
     override func viewDidLoad() {
@@ -23,7 +22,4 @@ class ShopDetailViewController: UIViewController {
         self.shopDetailDescription.text = self.shop.description
         self.shop.image.loadImage(into: shopImage)
     }
-
-    
-
 }

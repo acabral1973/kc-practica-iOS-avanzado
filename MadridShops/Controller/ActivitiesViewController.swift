@@ -1,4 +1,4 @@
-//
+ //
 //  ActivitiesViewController.swift
 //  MadridShops
 //
@@ -13,9 +13,9 @@ import MapKit
 
 class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
     
-    
+    @IBOutlet weak var activitiesMap: MKMapView!
     @IBOutlet weak var activitiesCollectionView: UICollectionView!
-    @IBOutlet weak var map: MKMapView!
+    
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -37,7 +37,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         self.activitiesCollectionView.dataSource = self
         
         let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        self.map.setCenter(madridLocation.coordinate, animated: true)
+        self.activitiesMap.setCenter(madridLocation.coordinate, animated: true)
     }
     
     func initializeActivities() {
@@ -60,9 +60,22 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-    //    let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
-    //    self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
+        let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
+        self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activity)
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        // Identifico el segue que se ha activado
+        if segue.identifier == "ShowActivityDetailSegue" {
+            
+            // Obtengo el destino del segue
+            let vc = segue.destination as! ActivityDetailViewController
+                       
+            let activityCD: ActivityCD = sender as! ActivityCD
+            vc.activity = mapActivityCDIntoActivity(activityCD: activityCD)
+        }
     }
     
     
@@ -101,7 +114,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        self.map.setCenter(location.coordinate, animated: true)
+        self.activitiesMap.setCenter(location.coordinate, animated: true)
     }
     
     

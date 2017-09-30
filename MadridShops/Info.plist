@@ -21,7 +21,7 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>Quiero espiarte mucho mucho</string>
+	<string>Necesitamos tu ubicación para mostrarte las mejores tiendas y las actividades más divertidas a tu alrededor...</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>

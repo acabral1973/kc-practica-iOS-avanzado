@@ -11,10 +11,10 @@ import CoreData
 import CoreLocation
 import MapKit
 
-class ShopsViewController: UIViewController, CLLocationManagerDelegate {
-
+class ShopsViewController: UIViewController {
+    
     @IBOutlet weak var shopsCollectionView: UICollectionView!
-    @IBOutlet weak var map: MKMapView!
+    @IBOutlet weak var shopsMap: MKMapView!
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -22,23 +22,16 @@ class ShopsViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
+        self.setShopsMap()
         
         // La descarga de tiendas solo se efectúa si no había sido ejecutada correctamente antes
         ExecuteOnceInteractorImpl().execute(key: "Shops") {
             initializeData()
         }
-        
         self.shopsCollectionView.delegate = self
         self.shopsCollectionView.dataSource = self
-        
-        let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        self.map.setCenter(madridLocation.coordinate, animated: true)
     }
-    
+        
     func initializeData() {
         
         // Descargo la info de todas las tiendas
@@ -108,7 +101,7 @@ class ShopsViewController: UIViewController, CLLocationManagerDelegate {
     
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
-        self.map.setCenter(location.coordinate, animated: true)
+        self.shopsMap.setCenter(location.coordinate, animated: true)
     }
     
 
