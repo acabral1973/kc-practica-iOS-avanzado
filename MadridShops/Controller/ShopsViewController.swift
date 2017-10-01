@@ -11,7 +11,7 @@ import CoreData
 import CoreLocation
 import MapKit
 
-class ShopsViewController: UIViewController {
+class ShopsViewController: UIViewController, CLLocationManagerDelegate, MKMapViewDelegate{
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
     @IBOutlet weak var shopsMap: MKMapView!
@@ -24,6 +24,12 @@ class ShopsViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
+        
+        // Inicializo servicios de localización
+        self.locationManager.requestWhenInUseAuthorization()
+        self.locationManager.delegate = self
+        self.shopsMap.delegate = self
+        self.locationManager.startUpdatingLocation()
         self.setShopsMap()
         
         // La descarga de tiendas solo se efectúa si no había sido ejecutada correctamente antes
@@ -32,6 +38,7 @@ class ShopsViewController: UIViewController {
         }
         self.shopsCollectionView.delegate = self
         self.shopsCollectionView.dataSource = self
+        
     }
         
     func initializeData() {
@@ -110,6 +117,34 @@ class ShopsViewController: UIViewController {
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let location = locations[0]
         self.shopsMap.setCenter(location.coordinate, animated: true)
+    }
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        // Don't want to show a custom image if the annotation is the user's location.
+        guard !(annotation is MKUserLocation) else {
+            return nil
+        }
+        
+        // Better to make this class property
+        let annotationIdentifier = "AnnotationIdentifier"
+        
+        var annotationView: MKAnnotationView?
+        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
+            annotationView = dequeuedAnnotationView
+            annotationView?.annotation = annotation
+        }
+        else {
+            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
+        }
+        
+        if let annotationView = annotationView {
+            // Configure your annotation view here
+            annotationView.canShowCallout = true
+            // annotationView.image = UIImage(named: "marker")
+        }
+        
+        return annotationView
     }
     
 

@@ -13,7 +13,6 @@
 		9971573C1F706152000583C5 /* ExecuteOnceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971573B1F706152000583C5 /* ExecuteOnceInteractor.swift */; };
 		9971573E1F7061E9000583C5 /* SetExecutedOnceInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9971573D1F7061E9000583C5 /* SetExecutedOnceInteractor.swift */; };
 		997F90561F671254005FB80B /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 997F90551F671254005FB80B /* Podfile */; };
-		997F90581F671E08005FB80B /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 997F90571F671E08005FB80B /* MainViewController.swift */; };
 		998686F31F68654D0085859C /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998686F21F68654D0085859C /* JSONParser.swift */; };
 		998686F51F6868100085859C /* DownloadDataInteractorNSURLSessionImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 998686F41F6868100085859C /* DownloadDataInteractorNSURLSessionImpl.swift */; };
 		9995D8B91F61E9B8004C3AA0 /* Typealias.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9995D8B81F61E9B8004C3AA0 /* Typealias.swift */; };
@@ -68,7 +67,6 @@
 		9971573B1F706152000583C5 /* ExecuteOnceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExecuteOnceInteractor.swift; sourceTree = "<group>"; };
 		9971573D1F7061E9000583C5 /* SetExecutedOnceInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetExecutedOnceInteractor.swift; sourceTree = "<group>"; };
 		997F90551F671254005FB80B /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		997F90571F671E08005FB80B /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		998686F21F68654D0085859C /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = JSONParser.swift; path = MadridShops/Util/JSONParser.swift; sourceTree = SOURCE_ROOT; };
 		998686F41F6868100085859C /* DownloadDataInteractorNSURLSessionImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadDataInteractorNSURLSessionImpl.swift; sourceTree = "<group>"; };
 		9995D8B81F61E9B8004C3AA0 /* Typealias.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealias.swift; sourceTree = "<group>"; };
@@ -219,7 +217,6 @@
 				99F8D9FC1F61D0060020609D /* ShopsViewController.swift */,
 				9995D8BF1F61F6E0004C3AA0 /* ShopsViewController+CollectionViewController.swift */,
 				BA59B82E1F7E8A82006CFA09 /* ShopsViewController+Map.swift */,
-				997F90571F671E08005FB80B /* MainViewController.swift */,
 				99A1591D1F68729800285A5F /* ShopDetailViewController.swift */,
 				BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */,
 				BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */,
@@ -536,7 +533,6 @@
 				BA5B9DEA1F755EA100FC16CA /* SaveDataInteractorImpl.swift in Sources */,
 				99F8DA3A1F61E1550020609D /* DownloadDataInteractor.swift in Sources */,
 				99E097401F7068BB006AF960 /* SetExecutedOnceInteractorImpl.swift in Sources */,
-				997F90581F671E08005FB80B /* MainViewController.swift in Sources */,
 				99FA0E131F6B270D00ABFA05 /* MadridShops.xcdatamodeld in Sources */,
 				99A159211F68802600285A5F /* String+Image.swift in Sources */,
 			);
