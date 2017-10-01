@@ -18,6 +18,7 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
     
     
     var context: NSManagedObjectContext!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
     let locationManager = CLLocationManager()
     
     override func viewDidLoad() {
@@ -28,11 +29,20 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         self.locationManager.delegate = self
         self.locationManager.startUpdatingLocation()
         
+        self.activitiesMap.isHidden = true
+        self.activitiesCollectionView.isHidden = true
+        activityView.startAnimating()
+        activityView.isHidden = false
+
         // La descarga de actividades solo se efectúa si no había sido ejecutada correctamente antes
         ExecuteOnceInteractorImpl().execute(key: "Activities") {
             initializeActivities()
         }
         
+        self.activitiesMap.isHidden = false
+        self.activitiesCollectionView.isHidden = false
+        self.activityView.stopAnimating()
+        self.activityView.isHidden = true
         self.activitiesCollectionView.delegate = self
         self.activitiesCollectionView.dataSource = self
         

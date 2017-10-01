@@ -15,6 +15,8 @@ class ShopsViewController: UIViewController {
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
     @IBOutlet weak var shopsMap: MKMapView!
+    @IBOutlet weak var activityView: UIActivityIndicatorView!
+    
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -34,6 +36,9 @@ class ShopsViewController: UIViewController {
         
     func initializeData() {
         
+        activityView.startAnimating()
+        activityView.isHidden = false
+        
         // Descargo la info de todas las tiendas
         let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         downloadShopsInteractor.execute { (shops: Shops) in
@@ -41,6 +46,9 @@ class ShopsViewController: UIViewController {
             let cacheInteractor = SaveAllShopsInteractorImpl()
             cacheInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
                 SetExecutedOnceInteractorImpl().execute(key : "Shops")
+                
+                self.activityView.stopAnimating()
+                self.activityView.isHidden = true
                 
                 self._fetchedResultsController = nil
                 self.shopsCollectionView.delegate = self
