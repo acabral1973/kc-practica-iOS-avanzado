@@ -23,6 +23,7 @@ extension ShopsViewController: UICollectionViewDelegate, UICollectionViewDataSou
         
         let shopCD: ShopCD = fetchedResultsController.object(at: indexPath)
         
+        
         cell.refresh(shop: mapShopCDIntoShop(shopCD: shopCD))
         
         return cell

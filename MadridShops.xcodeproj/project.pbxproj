@@ -41,13 +41,13 @@
 		BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */; };
 		BA5B9DF21F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */; };
 		BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */; };
+		BA8531651F82499B00CA8C5D /* ShopCD+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */; };
 		BA876F971F7444EE0067DC1B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F961F7444EE0067DC1B /* Activity.swift */; };
 		BA876F991F74452C0067DC1B /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F981F74452C0067DC1B /* Activities.swift */; };
 		BA876F9B1F7447470067DC1B /* ActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9A1F7447460067DC1B /* ActivityExtension.swift */; };
 		BA876F9F1F745EAA0067DC1B /* ActivitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */; };
 		BA876FA11F7460680067DC1B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876FA01F7460680067DC1B /* CoreDataStack.swift */; };
 		BABBA4E31F7ADA94009058FD /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */; };
-		BADA451D1F7D439100A70A87 /* MapNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = BADA451C1F7D439100A70A87 /* MapNote.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,13 +101,13 @@
 		BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopCD+MKAnnotation.swift"; sourceTree = "<group>"; };
 		BA876F961F7444EE0067DC1B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		BA876F981F74452C0067DC1B /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		BA876F9A1F7447460067DC1B /* ActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityExtension.swift; sourceTree = "<group>"; };
 		BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTests.swift; sourceTree = "<group>"; };
 		BA876FA01F7460680067DC1B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
-		BADA451C1F7D439100A70A87 /* MapNote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapNote.swift; sourceTree = "<group>"; };
 		D62D10053A013D688E6AA51F /* Pods_MadridShopsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadridShopsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E655F0E3DF82FDBDB0CC7DA1 /* Pods-MadridShops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadridShops.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadridShops/Pods-MadridShops.release.xcconfig"; sourceTree = "<group>"; };
 		EAC4A12784EDBA973D35A2E9 /* Pods-MadridShopsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadridShopsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadridShopsTests/Pods-MadridShopsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -221,7 +221,6 @@
 				BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */,
 				BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */,
 				BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */,
-				BADA451C1F7D439100A70A87 /* MapNote.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -233,6 +232,7 @@
 				99F8DA031F61D0060020609D /* LaunchScreen.storyboard */,
 				9995D8C11F61FA22004C3AA0 /* ShopCell.swift */,
 				BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */,
+				BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -521,8 +521,8 @@
 				BA5B9DEE1F756F6E00FC16CA /* MapActivities.swift in Sources */,
 				9971573A1F705390000583C5 /* MapShops.swift in Sources */,
 				BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */,
+				BA8531651F82499B00CA8C5D /* ShopCD+MKAnnotation.swift in Sources */,
 				99F8DA201F61D4D50020609D /* Shops.swift in Sources */,
-				BADA451D1F7D439100A70A87 /* MapNote.swift in Sources */,
 				BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */,
 				BA876F991F74452C0067DC1B /* Activities.swift in Sources */,
 				9995D8C01F61F6E0004C3AA0 /* ShopsViewController+CollectionViewController.swift in Sources */,
