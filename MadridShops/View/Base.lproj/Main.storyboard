@@ -41,7 +41,7 @@
             </objects>
             <point key="canvasLocation" x="-1006" y="165"/>
         </scene>
-        <!--BUY!-->
+        <!--Shops-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ShopsViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
@@ -117,7 +117,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Shops" image="shop-icon" selectedImage="shop-icon" id="Ya9-97-v5h" userLabel="Shops Item"/>
-                    <navigationItem key="navigationItem" title="BUY!" largeTitleDisplayMode="always" id="kFm-6E-Ysl"/>
+                    <navigationItem key="navigationItem" title="Shops" largeTitleDisplayMode="always" id="kFm-6E-Ysl"/>
                     <connections>
                         <outlet property="shopsCollectionView" destination="Zb2-mG-Fdh" id="7nS-eu-zsq"/>
                         <outlet property="shopsMap" destination="wb1-KV-WtE" id="KDp-yP-gQU"/>
@@ -154,7 +154,7 @@
             </objects>
             <point key="canvasLocation" x="-1007" y="838"/>
         </scene>
-        <!--ENJOY!-->
+        <!--Activities-->
         <scene sceneID="pIY-Xt-msO">
             <objects>
                 <viewController id="ieu-gz-9gw" customClass="ActivitiesViewController" customModule="MadridShops" customModuleProvider="target" sceneMemberID="viewController">
@@ -226,7 +226,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="MiQ-v2-9Xx"/>
                     </view>
-                    <navigationItem key="navigationItem" title="ENJOY!" id="ofE-lo-qU0"/>
+                    <navigationItem key="navigationItem" title="Activities" id="ofE-lo-qU0"/>
                     <connections>
                         <outlet property="activitiesCollectionView" destination="oNl-Kh-EbL" id="iFf-B8-sPQ"/>
                         <outlet property="activitiesMap" destination="sRK-AO-yUV" id="3ta-9W-UkD"/>
@@ -299,45 +299,51 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-MM-Nbl">
-                                <rect key="frame" x="16" y="233" width="378" height="304"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BgB-HJ-3nm">
+                                <rect key="frame" x="0.0" y="437" width="414" height="262"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <string key="text">Lorem fistrum al ataquerl a gramenawer ahorarr. Benemeritaar apetecan diodeno de la pradera pecador amatomaa ese que llega está la cosa muy malar. Sexuarl fistro a peich de la pradera pecador jarl quietooor la caidita va usté muy cargadoo condemor qué dise usteer. Te voy a borrar el cerito torpedo ese que llega ese pedazo de ese hombree. Qué dise usteer benemeritaar pecador al ataquerl no puedor tiene musho peligro a gramenawer la caidita la caidita te va a hasé pupitaa. La caidita a wan está la cosa muy malar hasta luego Lucas tiene musho peligro al ataquerl mamaar ahorarr. De la pradera pupita pecador condemor tiene musho peligro se calle ustée. Fistro a wan condemor va usté muy cargadoo diodenoo mamaar. Pecador me cago en tus muelas fistro diodeno diodenoo te va a hasé pupitaa al ataquerl sexuarl ese hombree diodenoo por la gloria de mi madre.
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="hEd-MM-Nbl">
+                                        <rect key="frame" x="20" y="20" width="374" height="222"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <string key="text">Lorem fistrum al ataquerl a gramenawer ahorarr. Benemeritaar apetecan diodeno de la pradera pecador amatomaa ese que llega está la cosa muy malar. Sexuarl fistro a peich de la pradera pecador jarl quietooor la caidita va usté muy cargadoo condemor qué dise usteer. Te voy a borrar el cerito torpedo ese que llega ese pedazo de ese hombree. Qué dise usteer benemeritaar pecador al ataquerl no puedor tiene musho peligro a gramenawer la caidita la caidita te va a hasé pupitaa. La caidita a wan está la cosa muy malar hasta luego Lucas tiene musho peligro al ataquerl mamaar ahorarr. De la pradera pupita pecador condemor tiene musho peligro se calle ustée. Fistro a wan condemor va usté muy cargadoo diodenoo mamaar. Pecador me cago en tus muelas fistro diodeno diodenoo te va a hasé pupitaa al ataquerl sexuarl ese hombree diodenoo por la gloria de mi madre.
 
 Quietooor hasta luego Lucas apetecan benemeritaar se calle ustée hasta luego Lucas llevame al sircoo. Tiene musho peligro diodenoo por la gloria de mi madre a peich no puedor a gramenawer a gramenawer ese pedazo de mamaar. Jarl mamaar amatomaa te va a hasé pupitaa la caidita te voy a borrar el cerito torpedo. Por la gloria de mi madre a </string>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZf-KP-8wq">
-                                <rect key="frame" x="87" y="173" width="225" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </scrollView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-FV-zB1">
+                                <rect key="frame" x="20" y="78" width="374" height="242"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-MO-4dd">
-                                <rect key="frame" x="87" y="192" width="225" height="24"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-F2-Szo">
-                                <rect key="frame" x="87" y="211" width="225" height="24"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Opening" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IGA-F2-Szo">
+                                <rect key="frame" x="20" y="433" width="374" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fDc-Ob-nfy">
-                                <rect key="frame" x="137" y="80" width="129" height="85"/>
+                                <rect key="frame" x="16" y="340" width="129" height="85"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hAX-FV-zB1">
-                                <rect key="frame" x="16" y="530" width="378" height="242"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VZf-KP-8wq">
+                                <rect key="frame" x="153" y="356" width="241" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9k-MO-4dd">
+                                <rect key="frame" x="153" y="385" width="241" height="24"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

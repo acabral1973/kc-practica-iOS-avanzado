@@ -7,10 +7,10 @@
 //
 
 import Foundation
-
+import MapKit
 public class Shop {
     var name: String
-    var description: String = ""
+    public var description: String = ""
     var latitude: Float? = nil
     var longitude: Float? = nil
     var image: String = ""
@@ -22,3 +22,5 @@ public class Shop {
         self.name = name
     }
 }
+
+

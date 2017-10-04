@@ -41,10 +41,10 @@
 		BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */; };
 		BA5B9DF21F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */; };
 		BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */; };
-		BA8531651F82499B00CA8C5D /* ShopCD+MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */; };
+		BA8531651F82499B00CA8C5D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8531641F82499B00CA8C5D /* MapAnnotation.swift */; };
 		BA876F971F7444EE0067DC1B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F961F7444EE0067DC1B /* Activity.swift */; };
 		BA876F991F74452C0067DC1B /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F981F74452C0067DC1B /* Activities.swift */; };
-		BA876F9B1F7447470067DC1B /* ActivityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9A1F7447460067DC1B /* ActivityExtension.swift */; };
+		BA876F9B1F7447470067DC1B /* ActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */; };
 		BA876F9F1F745EAA0067DC1B /* ActivitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */; };
 		BA876FA11F7460680067DC1B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876FA01F7460680067DC1B /* CoreDataStack.swift */; };
 		BABBA4E31F7ADA94009058FD /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */; };
@@ -101,10 +101,10 @@
 		BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
-		BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopCD+MKAnnotation.swift"; sourceTree = "<group>"; };
+		BA8531641F82499B00CA8C5D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
 		BA876F961F7444EE0067DC1B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		BA876F981F74452C0067DC1B /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
-		BA876F9A1F7447460067DC1B /* ActivityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityExtension.swift; sourceTree = "<group>"; };
+		BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityExtensions.swift; sourceTree = "<group>"; };
 		BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTests.swift; sourceTree = "<group>"; };
 		BA876FA01F7460680067DC1B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
@@ -232,7 +232,6 @@
 				99F8DA031F61D0060020609D /* LaunchScreen.storyboard */,
 				9995D8C11F61FA22004C3AA0 /* ShopCell.swift */,
 				BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */,
-				BA8531641F82499B00CA8C5D /* ShopCD+MKAnnotation.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -244,9 +243,10 @@
 				99F8DA381F61E0740020609D /* Interactors */,
 				997157381F70534A000583C5 /* Mappers */,
 				99F8DA1D1F61D2D30020609D /* Shop.swift */,
+				BA8531641F82499B00CA8C5D /* MapAnnotation.swift */,
 				99F8DA1F1F61D4D50020609D /* Shops.swift */,
 				BA876F961F7444EE0067DC1B /* Activity.swift */,
-				BA876F9A1F7447460067DC1B /* ActivityExtension.swift */,
+				BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */,
 				BA876F981F74452C0067DC1B /* Activities.swift */,
 			);
 			path = Model;
@@ -510,7 +510,7 @@
 				9995D8C21F61FA22004C3AA0 /* ShopCell.swift in Sources */,
 				BA876FA11F7460680067DC1B /* CoreDataStack.swift in Sources */,
 				998686F31F68654D0085859C /* JSONParser.swift in Sources */,
-				BA876F9B1F7447470067DC1B /* ActivityExtension.swift in Sources */,
+				BA876F9B1F7447470067DC1B /* ActivityExtensions.swift in Sources */,
 				BA5B9DEC1F755EE400FC16CA /* SaveDataInteractor.swift in Sources */,
 				99F8D9FD1F61D0060020609D /* ShopsViewController.swift in Sources */,
 				BA876F971F7444EE0067DC1B /* Activity.swift in Sources */,
@@ -521,7 +521,7 @@
 				BA5B9DEE1F756F6E00FC16CA /* MapActivities.swift in Sources */,
 				9971573A1F705390000583C5 /* MapShops.swift in Sources */,
 				BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */,
-				BA8531651F82499B00CA8C5D /* ShopCD+MKAnnotation.swift in Sources */,
+				BA8531651F82499B00CA8C5D /* MapAnnotation.swift in Sources */,
 				99F8DA201F61D4D50020609D /* Shops.swift in Sources */,
 				BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */,
 				BA876F991F74452C0067DC1B /* Activities.swift in Sources */,

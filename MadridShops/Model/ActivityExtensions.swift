@@ -1,5 +1,5 @@
 //
-//  ActivityExtension.swift
+//  ActivityExtensions.swift
 //  MadridShops
 //
 //  Created by Alejandro Cabral Benavente on 21/9/17.

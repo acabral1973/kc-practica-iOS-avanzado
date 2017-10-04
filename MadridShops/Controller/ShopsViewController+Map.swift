@@ -29,13 +29,14 @@ extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     // Cargo annotations en el Mapa
     func addShopsAnnotations() {
         for shopCD in self.fetchedResultsController.fetchedObjects! {
-            self.shopsMap.addAnnotation(shopCD)
+            let mapAnnotation = MapShopCDIntoMapAnnotation(shopCD: shopCD)
+            self.shopsMap.addAnnotation(mapAnnotation)
         }
     }
     
     // Delegados de MapView y LocationManager
 
-    private func mapView(_ mapView: MKMapView, viewFor annotation: ShopCD) -> MKAnnotationView? {
+    private func mapView(_ mapView: MKMapView, viewFor annotation: MapAnnotation) -> MKAnnotationView? {
         // Don't want to show a custom image if the annotation is the user's location.
         guard !(annotation as MKAnnotation is MKUserLocation) else {
             return nil
