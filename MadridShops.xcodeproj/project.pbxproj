@@ -34,6 +34,7 @@
 		99F8DA3A1F61E1550020609D /* DownloadDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99F8DA391F61E1550020609D /* DownloadDataInteractor.swift */; };
 		99FA0E101F6B26C500ABFA05 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99FA0E0F1F6B26C400ABFA05 /* CoreData.framework */; };
 		99FA0E131F6B270D00ABFA05 /* MadridShops.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 99FA0E111F6B270D00ABFA05 /* MadridShops.xcdatamodeld */; };
+		BA30F3901F85713D0039E088 /* ActivitiesViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA30F38F1F85713D0039E088 /* ActivitiesViewController+Map.swift */; };
 		BA59B82F1F7E8A82006CFA09 /* ShopsViewController+Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA59B82E1F7E8A82006CFA09 /* ShopsViewController+Map.swift */; };
 		BA5B9DEA1F755EA100FC16CA /* SaveDataInteractorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DE91F755EA100FC16CA /* SaveDataInteractorImpl.swift */; };
 		BA5B9DEC1F755EE400FC16CA /* SaveDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DEB1F755EE400FC16CA /* SaveDataInteractor.swift */; };
@@ -94,6 +95,7 @@
 		99FA0E0F1F6B26C400ABFA05 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		99FA0E121F6B270D00ABFA05 /* MadridShops.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MadridShops.xcdatamodel; sourceTree = "<group>"; };
 		B1EDED2293117EE05A998138 /* Pods_MadridShops.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadridShops.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA30F38F1F85713D0039E088 /* ActivitiesViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesViewController+Map.swift"; sourceTree = "<group>"; };
 		BA59B82E1F7E8A82006CFA09 /* ShopsViewController+Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ShopsViewController+Map.swift"; sourceTree = "<group>"; };
 		BA5B9DE91F755EA100FC16CA /* SaveDataInteractorImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataInteractorImpl.swift; sourceTree = "<group>"; };
 		BA5B9DEB1F755EE400FC16CA /* SaveDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveDataInteractor.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */,
 				BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */,
 				BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */,
+				BA30F38F1F85713D0039E088 /* ActivitiesViewController+Map.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -506,6 +509,7 @@
 			files = (
 				BABBA4E31F7ADA94009058FD /* ActivityDetailViewController.swift in Sources */,
 				BA5B9DF21F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift in Sources */,
+				BA30F3901F85713D0039E088 /* ActivitiesViewController+Map.swift in Sources */,
 				99F8DA1E1F61D2D30020609D /* Shop.swift in Sources */,
 				9995D8C21F61FA22004C3AA0 /* ShopCell.swift in Sources */,
 				BA876FA11F7460680067DC1B /* CoreDataStack.swift in Sources */,

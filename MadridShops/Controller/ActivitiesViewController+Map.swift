@@ -1,44 +1,44 @@
 //
-//  ShopsViewController+Map.swift
+//  ActivitiesViewController+Map.swift
 //  MadridShops
 //
-//  Created by Alejandro Cabral Benavente on 29/9/17.
+//  Created by Alejandro Cabral Benavente on 4/10/17.
 //  Copyright © 2017 KC. All rights reserved.
 //
 
 import CoreLocation
 import MapKit
 
-extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
-  
+extension ActivitiesViewController: CLLocationManagerDelegate, MKMapViewDelegate {
+    
     // Inicializo los servicios de localización, centro el mapa en Madrid y defino la región que se visualiza
-    func setShopsMap() {
-
+    func setActivitiesMap() {
+        
         self.locationManager.requestWhenInUseAuthorization()
         self.locationManager.delegate = self
-        self.shopsMap.delegate = self
+        self.activitiesMap.delegate = self
         self.locationManager.startUpdatingLocation()
         
         let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
         let madridRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
-        let reg = self.shopsMap.regionThatFits(madridRegion)
-        self.shopsMap.setCenter(madridLocation.coordinate, animated: true)
-        self.shopsMap.setRegion(reg, animated: true)
+        let reg = self.activitiesMap.regionThatFits(madridRegion)
+        self.activitiesMap.setCenter(madridLocation.coordinate, animated: true)
+        self.activitiesMap.setRegion(reg, animated: true)
     }
     
     // Cargo annotations en el Mapa
-    func addShopsAnnotations() {
-        for shopCD in self.fetchedResultsController.fetchedObjects! {
-            let shopAnnotation = MapShopCDIntoShopAnnotation(shopCD: shopCD)
-            self.shopsMap.addAnnotation(shopAnnotation)
+    func addActivitiesAnnotations() {
+        for activityCD in self.fetchedResultsController.fetchedObjects! {
+            let activityAnnotation = MapActivityCDIntoActivityAnnotation(activityCD: activityCD)
+            self.activitiesMap.addAnnotation(activityAnnotation)
         }
     }
     
     // Delegados de MapView y LocationManager
     
     func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
-        if let annotation = annotation as? ShopAnnotation {
-            let annotationIdentifier = "ShopAnnotationIdentifier"
+        if let annotation = annotation as? ActivityAnnotation {
+            let annotationIdentifier = "ActivityAnnotationIdentifier"
             var annotationView: MKPinAnnotationView?
             if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
                 as? MKPinAnnotationView {
@@ -53,11 +53,10 @@ extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
                 annotationView.image = UIImage(named: "madrid-shops-logo")
                 annotationView.calloutOffset = CGPoint(x: -5, y: 5)
                 annotationView.rightCalloutAccessoryView = UIButton(type: .infoDark) as UIView
- 
-                let shopNameTextView = UITextView()
-                shopNameTextView.text = annotation.shop.name
+                let activityNameTextView = UITextView()
+                activityNameTextView.text = annotation.activity.name
                 
-                annotationView.leftCalloutAccessoryView = shopNameTextView
+                annotationView.leftCalloutAccessoryView = activityNameTextView
                 
             }
             
@@ -69,12 +68,14 @@ extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     
     func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
         if control == view.rightCalloutAccessoryView {
-            performSegue(withIdentifier: "ShowShopDetailSegue", sender: MapShopAnnotationIntoShop(shopAnnotation: view.annotation as! ShopAnnotation))
+            performSegue(withIdentifier: "ShowActivityDetailSegue", sender: MapActivityAnnotationIntoActivity(activityAnnotation: view.annotation as! ActivityAnnotation))
         }
         
     }
+    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-
+        
     }
     
 }
+

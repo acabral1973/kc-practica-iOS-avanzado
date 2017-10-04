@@ -205,13 +205,6 @@
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="sRK-AO-yUV">
                                 <rect key="frame" x="0.0" y="64" width="414" height="307.66666666666669"/>
                             </mapView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="taM-k5-OPn">
-                                <rect key="frame" x="197" y="358" width="20" height="20"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="40" id="emL-E3-oSP"/>
-                                    <constraint firstAttribute="height" constant="40" id="xM5-VM-zFc"/>
-                                </constraints>
-                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -233,7 +226,6 @@
                     <connections>
                         <outlet property="activitiesCollectionView" destination="oNl-Kh-EbL" id="iFf-B8-sPQ"/>
                         <outlet property="activitiesMap" destination="sRK-AO-yUV" id="3ta-9W-UkD"/>
-                        <outlet property="activityView" destination="taM-k5-OPn" id="H5V-7u-neM"/>
                         <segue destination="7gG-mG-GJQ" kind="show" identifier="ShowActivityDetailSegue" id="7uy-C2-CTg"/>
                     </connections>
                 </viewController>

@@ -15,7 +15,6 @@ class ShopsViewController: UIViewController {
     
     @IBOutlet weak var shopsCollectionView: UICollectionView!
     @IBOutlet weak var shopsMap: MKMapView!
-    @IBOutlet weak var activityView: UIActivityIndicatorView!
     
     var context: NSManagedObjectContext!
     let locationManager = CLLocationManager()
@@ -59,13 +58,13 @@ class ShopsViewController: UIViewController {
         
         // La descarga de tiendas solo se efectúa si no había sido ejecutada correctamente antes
         ExecuteOnceInteractorImpl().execute(key: "Shops") {
-            initializeData()
+            initializeShops()
         }
         self.shopsCollectionView.delegate = self
         self.shopsCollectionView.dataSource = self
     }
     
-    func initializeData() {
+    func initializeShops() {
         // Descargo la info de todas las tiendas
         let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
         downloadShopsInteractor.execute { (shops: Shops) in
@@ -93,7 +92,6 @@ class ShopsViewController: UIViewController {
             vc.shop = sender as! Shop
         }
     }
-
 }
 
 

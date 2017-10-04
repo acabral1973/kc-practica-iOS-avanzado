@@ -11,87 +11,14 @@ import CoreData
 import CoreLocation
 import MapKit
 
-class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
+class ActivitiesViewController: UIViewController {
     
     @IBOutlet weak var activitiesMap: MKMapView!
     @IBOutlet weak var activitiesCollectionView: UICollectionView!
     
-    
     var context: NSManagedObjectContext!
-    @IBOutlet weak var activityView: UIActivityIndicatorView!
     let locationManager = CLLocationManager()
-    
-    override func viewDidLoad() {
-        
-        super.viewDidLoad()
-        
-        self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self
-        self.locationManager.startUpdatingLocation()
-        
-        self.activitiesMap.isHidden = true
-        self.activitiesCollectionView.isHidden = true
-        activityView.startAnimating()
-        activityView.isHidden = false
-
-        // La descarga de actividades solo se efectúa si no había sido ejecutada correctamente antes
-        ExecuteOnceInteractorImpl().execute(key: "Activities") {
-            initializeActivities()
-        }
-        
-        self.activitiesMap.isHidden = false
-        self.activitiesCollectionView.isHidden = false
-        self.activityView.stopAnimating()
-        self.activityView.isHidden = true
-        self.activitiesCollectionView.delegate = self
-        self.activitiesCollectionView.dataSource = self
-        
-        let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        self.activitiesMap.setCenter(madridLocation.coordinate, animated: true)
-    }
-    
-    func initializeActivities() {
-        
-        // Descargo la info de todas las Actividades
-        let downloadActivitiesInteractor: DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
-        downloadActivitiesInteractor.execute { (activities: Activities) in
-            print("👍 Total actividades descargadas: \(activities.count())")
-            let cacheInteractor = SaveAllActivitiesInteractorImpl()
-            cacheInteractor.execute(activities: activities, context: self.context, onSuccess: { (activities: Activities) in
-                SetExecutedOnceInteractorImpl().execute(key : "Activities")
-                
-                self._fetchedResultsController = nil
-                self.activitiesCollectionView.delegate = self
-                self.activitiesCollectionView.dataSource = self
-                self.activitiesCollectionView.reloadData()
-            })
-        }
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        
-        let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
-        self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activity)
-        
-    }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        // Identifico el segue que se ha activado
-        if segue.identifier == "ShowActivityDetailSegue" {
-            
-            // Obtengo el destino del segue
-            let vc = segue.destination as! ActivityDetailViewController
-                       
-            let activityCD: ActivityCD = sender as! ActivityCD
-            vc.activity = mapActivityCDIntoActivity(activityCD: activityCD)
-        }
-    }
-    
-    
-    // MARK: - Fetched results controller
     var _fetchedResultsController: NSFetchedResultsController<ActivityCD>? = nil
-    
     var fetchedResultsController: NSFetchedResultsController<ActivityCD> {
         if (_fetchedResultsController != nil) {
             return _fetchedResultsController!
@@ -121,12 +48,49 @@ class ActivitiesViewController: UIViewController, CLLocationManagerDelegate {
         return _fetchedResultsController!
     }
     
-    
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        self.activitiesMap.setCenter(location.coordinate, animated: true)
+    override func viewDidLoad() {
+        
+        super.viewDidLoad()
+        
+        // Inicializo el mapa y agrego las annotations correspondientes a las Avtivities
+        self.setActivitiesMap()
+        self.addActivitiesAnnotations()
+        
+        // La descarga de actividades solo se efectúa si no había sido ejecutada correctamente antes
+        ExecuteOnceInteractorImpl().execute(key: "Activities") {
+            initializeActivities()
+        }
+        self.activitiesCollectionView.delegate = self
+        self.activitiesCollectionView.dataSource = self
     }
     
+    func initializeActivities() {
+        // Descargo la info de todas las Actividades
+        let downloadActivitiesInteractor: DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
+        downloadActivitiesInteractor.execute { (activities: Activities) in
+            print("👍 Total actividades descargadas: \(activities.count())")
+            let cacheInteractor = SaveAllActivitiesInteractorImpl()
+            cacheInteractor.execute(activities: activities, context: self.context, onSuccess: { (activities: Activities) in
+                SetExecutedOnceInteractorImpl().execute(key : "Activities")
+                self._fetchedResultsController = nil
+                self.activitiesCollectionView.delegate = self
+                self.activitiesCollectionView.dataSource = self
+                self.activitiesCollectionView.reloadData()
+            })
+        }
+    }
     
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
+        self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activity)
+        
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowActivityDetailSegue" {
+            let vc = segue.destination as! ActivityDetailViewController
+            vc.activity = sender as! Activity
+        }
+    }
 }
 

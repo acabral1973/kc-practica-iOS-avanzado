@@ -23,3 +23,18 @@ class ShopAnnotation: NSObject, MKAnnotation {
     }
 }
 
+class ActivityAnnotation: NSObject, MKAnnotation {
+    
+    let title: String?
+    let subtitle: String?
+    let coordinate: CLLocationCoordinate2D
+    let activity: Activity
+    
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D, activity: Activity) {
+        self.title = title
+        self.subtitle = subtitle
+        self.coordinate = coordinate
+        self.activity = activity
+    }
+}
+
