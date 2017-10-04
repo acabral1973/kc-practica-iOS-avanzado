@@ -9,11 +9,16 @@
 import CoreData
 import CoreLocation
 
-func MapShopCDIntoMapAnnotation(shopCD: ShopCD) -> MapAnnotation {
+func MapShopCDIntoShopAnnotation(shopCD: ShopCD) -> ShopAnnotation {
     let shopLocation = CLLocation(latitude: Double(shopCD.latitude), longitude: Double(shopCD.longitude))
-    let mapAnnotation = MapAnnotation(title: shopCD.name!, subtitle: shopCD.address!, coordinate: shopLocation.coordinate)
+    let shopAnnotation = ShopAnnotation(title: shopCD.name!, subtitle: shopCD.address!, coordinate: shopLocation.coordinate, shop: mapShopCDIntoShop(shopCD: shopCD))
 
-    return mapAnnotation
+    return shopAnnotation
+}
+
+func MapShopAnnotationIntoShop(shopAnnotation: ShopAnnotation) -> Shop {
+    let shop : Shop = shopAnnotation.shop
+    return shop
 }
 
 func mapShopCDIntoShop(shopCD: ShopCD) -> Shop {

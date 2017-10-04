@@ -41,7 +41,7 @@
 		BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */; };
 		BA5B9DF21F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */; };
 		BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */; };
-		BA8531651F82499B00CA8C5D /* MapAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8531641F82499B00CA8C5D /* MapAnnotation.swift */; };
+		BA8531651F82499B00CA8C5D /* MapAnnotations.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8531641F82499B00CA8C5D /* MapAnnotations.swift */; };
 		BA876F971F7444EE0067DC1B /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F961F7444EE0067DC1B /* Activity.swift */; };
 		BA876F991F74452C0067DC1B /* Activities.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F981F74452C0067DC1B /* Activities.swift */; };
 		BA876F9B1F7447470067DC1B /* ActivityExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */; };
@@ -101,7 +101,7 @@
 		BA5B9DEF1F791F7F00FC16CA /* ActivitiesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesViewController.swift; sourceTree = "<group>"; };
 		BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ActivitiesViewController+CollectionViewController.swift"; sourceTree = "<group>"; };
 		BA5B9DF31F7923D100FC16CA /* ActivityCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
-		BA8531641F82499B00CA8C5D /* MapAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotation.swift; sourceTree = "<group>"; };
+		BA8531641F82499B00CA8C5D /* MapAnnotations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapAnnotations.swift; sourceTree = "<group>"; };
 		BA876F961F7444EE0067DC1B /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
 		BA876F981F74452C0067DC1B /* Activities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activities.swift; sourceTree = "<group>"; };
 		BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityExtensions.swift; sourceTree = "<group>"; };
@@ -243,7 +243,7 @@
 				99F8DA381F61E0740020609D /* Interactors */,
 				997157381F70534A000583C5 /* Mappers */,
 				99F8DA1D1F61D2D30020609D /* Shop.swift */,
-				BA8531641F82499B00CA8C5D /* MapAnnotation.swift */,
+				BA8531641F82499B00CA8C5D /* MapAnnotations.swift */,
 				99F8DA1F1F61D4D50020609D /* Shops.swift */,
 				BA876F961F7444EE0067DC1B /* Activity.swift */,
 				BA876F9A1F7447460067DC1B /* ActivityExtensions.swift */,
@@ -521,7 +521,7 @@
 				BA5B9DEE1F756F6E00FC16CA /* MapActivities.swift in Sources */,
 				9971573A1F705390000583C5 /* MapShops.swift in Sources */,
 				BA5B9DF01F791F7F00FC16CA /* ActivitiesViewController.swift in Sources */,
-				BA8531651F82499B00CA8C5D /* MapAnnotation.swift in Sources */,
+				BA8531651F82499B00CA8C5D /* MapAnnotations.swift in Sources */,
 				99F8DA201F61D4D50020609D /* Shops.swift in Sources */,
 				BA5B9DF41F7923D100FC16CA /* ActivityCell.swift in Sources */,
 				BA876F991F74452C0067DC1B /* Activities.swift in Sources */,

@@ -1,5 +1,5 @@
 //
-//  MapAnnotation.swift
+//  MapAnnotations.swift
 //  MadridShops
 //
 //  Created by Alejandro Cabral Benavente on 2/10/17.
@@ -8,16 +8,18 @@
 
 import MapKit
 
-class MapAnnotation: NSObject, MKAnnotation {
+class ShopAnnotation: NSObject, MKAnnotation {
     
     let title: String?
     let subtitle: String?
     let coordinate: CLLocationCoordinate2D
+    let shop: Shop
     
-    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D) {
+    init(title: String, subtitle: String, coordinate: CLLocationCoordinate2D, shop: Shop) {
         self.title = title
         self.subtitle = subtitle
         self.coordinate = coordinate
+        self.shop = shop
     }
 }
 

@@ -15,12 +15,12 @@ extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     func setShopsMap() {
 
         self.locationManager.requestWhenInUseAuthorization()
-        self.locationManager.delegate = self as CLLocationManagerDelegate
+        self.locationManager.delegate = self
         self.shopsMap.delegate = self
         self.locationManager.startUpdatingLocation()
         
         let madridLocation = CLLocation(latitude:40.41889 , longitude: -3.69194)
-        let madridRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.2, longitudeDelta: 0.2))
+        let madridRegion = MKCoordinateRegion(center: madridLocation.coordinate, span: MKCoordinateSpan(latitudeDelta: 0.05, longitudeDelta: 0.05))
         let reg = self.shopsMap.regionThatFits(madridRegion)
         self.shopsMap.setCenter(madridLocation.coordinate, animated: true)
         self.shopsMap.setRegion(reg, animated: true)
@@ -29,45 +29,57 @@ extension ShopsViewController: CLLocationManagerDelegate, MKMapViewDelegate {
     // Cargo annotations en el Mapa
     func addShopsAnnotations() {
         for shopCD in self.fetchedResultsController.fetchedObjects! {
-            let mapAnnotation = MapShopCDIntoMapAnnotation(shopCD: shopCD)
-            self.shopsMap.addAnnotation(mapAnnotation)
+            let shopAnnotation = MapShopCDIntoShopAnnotation(shopCD: shopCD)
+            self.shopsMap.addAnnotation(shopAnnotation)
         }
     }
     
     // Delegados de MapView y LocationManager
-
-    private func mapView(_ mapView: MKMapView, viewFor annotation: MapAnnotation) -> MKAnnotationView? {
-        // Don't want to show a custom image if the annotation is the user's location.
-        guard !(annotation as MKAnnotation is MKUserLocation) else {
-            return nil
+    
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        if let annotation = annotation as? ShopAnnotation {
+            let annotationIdentifier = "ShopAnnotationIdentifier"
+            var annotationView: MKPinAnnotationView?
+            if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier)
+                as? MKPinAnnotationView {
+                annotationView = dequeuedAnnotationView
+                annotationView?.annotation = annotation
+            } else {
+                annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
+            }
+            
+            if let annotationView = annotationView {
+                annotationView.canShowCallout = true
+                annotationView.image = UIImage(named: "madrid-shops-logo")
+                annotationView.calloutOffset = CGPoint(x: -5, y: 5)
+                annotationView.rightCalloutAccessoryView = UIButton(type: .infoDark) as UIView
+                
+                //let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: annotationView.frame.height, height: annotationView.frame.height))
+                //annotation.shop.logo.loadImage(into: imageView)
+                //imageView.contentMode = .scaleAspectFit
+                let shopNameTextView = UITextView()
+                shopNameTextView.text = annotation.shop.name
+                
+                annotationView.leftCalloutAccessoryView = shopNameTextView
+                
+            }
+            
+            return annotationView
         }
-        
-        // Better to make this class property
-        let annotationIdentifier = "AnnotationIdentifier"
-        
-        var annotationView: MKAnnotationView?
-        if let dequeuedAnnotationView = mapView.dequeueReusableAnnotationView(withIdentifier: annotationIdentifier) {
-            annotationView = dequeuedAnnotationView
-            annotationView?.annotation = annotation
-        }
-        else {
-            annotationView = MKAnnotationView(annotation: annotation, reuseIdentifier: annotationIdentifier)
-            annotationView?.rightCalloutAccessoryView = UIButton(type: .detailDisclosure)
-        }
-        
-        if let annotationView = annotationView {
-            // Configure your annotation view here
-            annotationView.canShowCallout = true
-            annotationView.image = UIImage(named: "moreInfo")
-        }
-        
-        return annotationView
+        return nil
     }
     
     
+    func mapView(_ mapView: MKMapView, annotationView view: MKAnnotationView, calloutAccessoryControlTapped control: UIControl) {
+        if control == view.rightCalloutAccessoryView {
+            
+            print("🔍 Showing detail for: \(view.annotation?.title!)")
+            performSegue(withIdentifier: "ShowShopDetailSegue", sender: MapShopAnnotationIntoShop(shopAnnotation: view.annotation as! ShopAnnotation))
+        }
+        
+    }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        let location = locations[0]
-        self.shopsMap.setCenter(location.coordinate, animated: true)
+
     }
     
 }

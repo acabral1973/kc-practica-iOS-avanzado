@@ -82,7 +82,7 @@ class ShopsViewController: UIViewController {
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let shop: ShopCD = self.fetchedResultsController.object(at: indexPath)
+        let shop: Shop = mapShopCDIntoShop(shopCD: self.fetchedResultsController.object(at: indexPath))
         self.performSegue(withIdentifier: "ShowShopDetailSegue", sender: shop)
         
     }
@@ -90,8 +90,7 @@ class ShopsViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowShopDetailSegue" {
             let vc = segue.destination as! ShopDetailViewController
-            let shopCD: ShopCD = sender as! ShopCD
-            vc.shop = mapShopCDIntoShop(shopCD: shopCD)
+            vc.shop = sender as! Shop
         }
     }
 
