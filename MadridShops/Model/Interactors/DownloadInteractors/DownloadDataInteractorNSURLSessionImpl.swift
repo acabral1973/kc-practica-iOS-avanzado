@@ -13,8 +13,8 @@ class DownloadAllShopsInteractorNSURLSessionImpl: DownloadAllShopsInteractor {
     func execute(onSuccess: @escaping (Shops) -> Void, onError: errorClosure) {
         let urlString = "https://madrid-shops.com/json_new/getShops.php"
         
-        let session = URLSession.shared
         if let url = URL(string: urlString) {
+            let session = URLSession.shared
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
 
                 OperationQueue.main.addOperation {
@@ -22,7 +22,6 @@ class DownloadAllShopsInteractorNSURLSessionImpl: DownloadAllShopsInteractor {
 
                     if error == nil {
                         // OK
-                        
                         let shops = parseShops(data: data!)
                         onSuccess(shops)
                     } else {
@@ -53,15 +52,10 @@ class DownloadAllActivitiesInteractorNSURLSessionImpl: DownloadAllActivitiesInte
             let task = session.dataTask(with: url) { (data: Data?, response: URLResponse?, error: Error?) in
                 
                 OperationQueue.main.addOperation {
-                    assert(Thread.current == Thread.main)
-                    
                     if error == nil {
-                        // OK
-                        
                         let activities = parseActivities(data: data!)
                         onSuccess(activities)
                     } else {
-                        // Error
                         if let myError = onError {
                             myError(error!)
                         }

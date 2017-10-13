@@ -51,37 +51,14 @@ class ActivitiesViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        // Inicializo el mapa y agrego las annotations correspondientes a las Avtivities
         self.setActivitiesMap()
         self.addActivitiesAnnotations()
-        
-        // La descarga de actividades solo se efectúa si no había sido ejecutada correctamente antes
-        ExecuteOnceInteractorImpl().execute(key: "Activities") {
-            initializeActivities()
-        }
         self.activitiesCollectionView.delegate = self
         self.activitiesCollectionView.dataSource = self
     }
     
-    func initializeActivities() {
-        // Descargo la info de todas las Actividades
-        let downloadActivitiesInteractor: DownloadAllActivitiesInteractor = DownloadAllActivitiesInteractorNSURLSessionImpl()
-        downloadActivitiesInteractor.execute { (activities: Activities) in
-            print("👍 Total actividades descargadas: \(activities.count())")
-            let cacheInteractor = SaveAllActivitiesInteractorImpl()
-            cacheInteractor.execute(activities: activities, context: self.context, onSuccess: { (activities: Activities) in
-                SetExecutedOnceInteractorImpl().execute(key : "Activities")
-                self._fetchedResultsController = nil
-                self.activitiesCollectionView.delegate = self
-                self.activitiesCollectionView.dataSource = self
-                self.activitiesCollectionView.reloadData()
-            })
-        }
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let activity: ActivityCD = self.fetchedResultsController.object(at: indexPath)
+        let activity: Activity = mapActivityCDIntoActivity(activityCD: self.fetchedResultsController.object(at: indexPath))
         self.performSegue(withIdentifier: "ShowActivityDetailSegue", sender: activity)
         
     }

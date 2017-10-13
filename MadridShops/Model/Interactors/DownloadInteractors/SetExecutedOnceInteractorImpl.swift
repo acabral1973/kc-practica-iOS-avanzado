@@ -11,7 +11,12 @@ import Foundation
 class SetExecutedOnceInteractorImpl: SetExecutedOnceInteractor {
     func execute(key: String) {
         let defaults = UserDefaults.standard
-        defaults.set("SAVED", forKey: key)
+        if var savedData = defaults.string(forKey: "SavedData") {
+            savedData = savedData + key
+            defaults.set(savedData, forKey: "SavedData")
+        } else {
+            defaults.set(key, forKey: "SavedData")
+        }
         defaults.synchronize()
     }
 }

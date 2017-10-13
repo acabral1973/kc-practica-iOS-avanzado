@@ -51,33 +51,10 @@ class ShopsViewController: UIViewController {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        // Inicializo el mapa y agrego las annotations correspondientes a las Shops
         self.setShopsMap()
         self.addShopsAnnotations()
-        
-        // La descarga de tiendas solo se efectúa si no había sido ejecutada correctamente antes
-        ExecuteOnceInteractorImpl().execute(key: "Shops") {
-            initializeShops()
-        }
         self.shopsCollectionView.delegate = self
         self.shopsCollectionView.dataSource = self
-    }
-    
-    func initializeShops() {
-        // Descargo la info de todas las tiendas
-        let downloadShopsInteractor: DownloadAllShopsInteractor = DownloadAllShopsInteractorNSURLSessionImpl()
-        downloadShopsInteractor.execute { (shops: Shops) in
-            print("👍 Total tiendas descargadas: \(shops.count())")
-            let cacheInteractor = SaveAllShopsInteractorImpl()
-            cacheInteractor.execute(shops: shops, context: self.context, onSuccess: { (shops: Shops) in
-                SetExecutedOnceInteractorImpl().execute(key : "Shops")
-                self._fetchedResultsController = nil
-                self.shopsCollectionView.delegate = self
-                self.shopsCollectionView.dataSource = self
-                self.shopsCollectionView.reloadData()
-            })
-        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

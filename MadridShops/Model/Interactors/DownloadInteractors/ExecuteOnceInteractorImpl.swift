@@ -9,15 +9,22 @@
 import Foundation
 
 class ExecuteOnceInteractorImpl: ExecuteOnceInteractor {
-    func execute(key: String, closure: () -> Void) {
+    func execute(closure: (String) -> Void) {
         let defaults = UserDefaults.standard
-        if let _ = defaults.string(forKey: key) {
-            // already saved
-            print("💾 Las ", key, " ya estaban cargadas en la base de datos")
+        if let savedData = defaults.string(forKey: "SavedData") {
+            switch savedData {
+            case "ShopsSaved":
+                print("💾 Information about Shops was already downloaded")
+                closure("Activities")
+            case "ActivitiesSaved":
+                print("💾 Information about Activities was already downloaded")
+                closure("Shops")
+            default:
+                print("💾 Information about Shops and Activities was already downloaded")
+                closure("Nothing")
+            }
         } else {
-            // first time
-            print("💾 Descargando ", key, " por primera vez desde Internet")
-            closure()
+            closure("All")
         }
     }
 }

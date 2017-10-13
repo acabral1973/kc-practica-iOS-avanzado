@@ -49,6 +49,7 @@
 		BA876F9F1F745EAA0067DC1B /* ActivitiesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */; };
 		BA876FA11F7460680067DC1B /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA876FA01F7460680067DC1B /* CoreDataStack.swift */; };
 		BABBA4E31F7ADA94009058FD /* ActivityDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */; };
+		BAD503811F86CE6500628705 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD503801F86CE6500628705 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,6 +111,7 @@
 		BA876F9E1F745EAA0067DC1B /* ActivitiesTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivitiesTests.swift; sourceTree = "<group>"; };
 		BA876FA01F7460680067DC1B /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityDetailViewController.swift; sourceTree = "<group>"; };
+		BAD503801F86CE6500628705 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D62D10053A013D688E6AA51F /* Pods_MadridShopsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MadridShopsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E655F0E3DF82FDBDB0CC7DA1 /* Pods-MadridShops.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadridShops.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadridShops/Pods-MadridShops.release.xcconfig"; sourceTree = "<group>"; };
 		EAC4A12784EDBA973D35A2E9 /* Pods-MadridShopsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MadridShopsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MadridShopsTests/Pods-MadridShopsTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 				BA5B9DF11F79201300FC16CA /* ActivitiesViewController+CollectionViewController.swift */,
 				BABBA4E21F7ADA94009058FD /* ActivityDetailViewController.swift */,
 				BA30F38F1F85713D0039E088 /* ActivitiesViewController+Map.swift */,
+				BAD503801F86CE6500628705 /* MainViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -271,9 +274,9 @@
 				99F8DA391F61E1550020609D /* DownloadDataInteractor.swift */,
 				998686F41F6868100085859C /* DownloadDataInteractorNSURLSessionImpl.swift */,
 				9971573B1F706152000583C5 /* ExecuteOnceInteractor.swift */,
+				99E097411F7069A4006AF960 /* ExecuteOnceInteractorImpl.swift */,
 				9971573D1F7061E9000583C5 /* SetExecutedOnceInteractor.swift */,
 				99E0973F1F7068BB006AF960 /* SetExecutedOnceInteractorImpl.swift */,
-				99E097411F7069A4006AF960 /* ExecuteOnceInteractorImpl.swift */,
 			);
 			path = DownloadInteractors;
 			sourceTree = "<group>";
@@ -519,6 +522,7 @@
 				99F8D9FD1F61D0060020609D /* ShopsViewController.swift in Sources */,
 				BA876F971F7444EE0067DC1B /* Activity.swift in Sources */,
 				9971573C1F706152000583C5 /* ExecuteOnceInteractor.swift in Sources */,
+				BAD503811F86CE6500628705 /* MainViewController.swift in Sources */,
 				99F8D9FB1F61D0060020609D /* AppDelegate.swift in Sources */,
 				9971573E1F7061E9000583C5 /* SetExecutedOnceInteractor.swift in Sources */,
 				BA59B82F1F7E8A82006CFA09 /* ShopsViewController+Map.swift in Sources */,

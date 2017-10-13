@@ -14,5 +14,5 @@ protocol ExecuteOnceInteractor {
     // utilizando claves independientes para una y otra descarga
     // De esta forma si una descarga va mal, pero la otra acaba ok, solo repito la que acabó mal
     
-    func execute(key: String, closure: () -> Void)
+    func execute(closure: (String) -> Void)
 }
