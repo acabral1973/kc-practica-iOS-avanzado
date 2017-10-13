@@ -9,6 +9,12 @@
 import Foundation
 
 extension Activity{
+
+    var activityMapImage : String {
+        let activityCoordinate = "\(self.latitude!),\(self.longitude!)"
+        let googleMapImage = "https://maps.googleapis.com/maps/api/staticmap?center=" + activityCoordinate +  "&zoom=17&size=320x220&scale=2&markers=%7Ccolor:0x9C7B14%7C" + activityCoordinate
+        return googleMapImage
+    }
     
     var proxyForEquatableAndComparable : String{
         get{
