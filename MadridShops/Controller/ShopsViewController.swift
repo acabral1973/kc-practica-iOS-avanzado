@@ -10,6 +10,8 @@ import UIKit
 import CoreData
 import CoreLocation
 import MapKit
+import SDWebImage
+
 
 class ShopsViewController: UIViewController {
     

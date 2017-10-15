@@ -12,12 +12,10 @@ extension String {
     func loadImage(into imageView: UIImageView) {
         let queue = OperationQueue()
         queue.addOperation {
-            if let url = URL(string: self),
-                let data = NSData(contentsOf: url),
-                let image = UIImage(data: data as Data) {
+            if let url = URL(string: self)  {
                 
                 OperationQueue.main.addOperation {
-                    imageView.image = image
+                    imageView.sd_setImage(with: url, placeholderImage: UIImage(named: "img_not_available"))
                 }
             }
         }
