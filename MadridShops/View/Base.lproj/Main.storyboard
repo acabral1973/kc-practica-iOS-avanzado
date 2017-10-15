@@ -331,7 +331,7 @@
                                 <rect key="frame" x="143" y="235" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sicronizing data from Internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5I-8B-Rm5">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sincronizing data from Internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5I-8B-Rm5">
                                 <rect key="frame" x="20" y="391" width="374" height="24"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Light" family="Helvetica Neue" pointSize="20"/>
@@ -343,6 +343,10 @@
                         <viewLayoutGuide key="safeArea" id="2AR-yu-mGb"/>
                     </view>
                     <navigationItem key="navigationItem" id="mT2-Cc-uzy"/>
+                    <connections>
+                        <outlet property="msgActivityIndicator" destination="u9C-9t-qAA" id="i1d-pr-ijL"/>
+                        <outlet property="msgLabel" destination="h5I-8B-Rm5" id="rKB-RI-AUM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JWh-pZ-tka" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

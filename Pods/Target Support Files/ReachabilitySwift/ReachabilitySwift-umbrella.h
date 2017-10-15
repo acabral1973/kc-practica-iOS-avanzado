@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double FillableLoadersVersionNumber;
-FOUNDATION_EXPORT const unsigned char FillableLoadersVersionString[];
+FOUNDATION_EXPORT double ReachabilitySwiftVersionNumber;
+FOUNDATION_EXPORT const unsigned char ReachabilitySwiftVersionString[];
 
